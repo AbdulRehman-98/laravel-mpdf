@@ -60,6 +60,10 @@ class LaravelMpdf
         $this->mpdf->SetAuthor($this->getConfig('author'));
         $this->mpdf->SetCreator($this->getConfig('creator'));
         $this->mpdf->SetWatermarkText($this->getConfig('watermark'));
+
+        // Added associate files support
+        $this->mpdf->SetAssociatedFiles($this->getConfig('associated_file'));
+
         $this->mpdf->SetWatermarkImage(
             $this->getConfig('watermark_image_path'),
             $this->getConfig('watermark_image_alpha'),
